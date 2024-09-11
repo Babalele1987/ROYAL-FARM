@@ -1,64 +1,154 @@
-/* General Styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with a Responsive Background */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-}
-
-header {
-    background-color: #006400;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-nav {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #80deea);
+    background-size: cover;
+    min-height: 100vh;
+    padding: 0 15px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    background-color: #333;
-    padding: 0.5rem 1rem;
+    justify-content: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+/* Container for Crop Information */
+.container {
+    max-width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
+/* Animated Heading Style */
+.animated-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00897b;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    animation: slideDown 1.5s ease-in-out, fadeIn 3s ease-in-out;
 }
 
+/* Heading Animation Effects */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Style for the Search Bar */
 #searchBar {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
+    width: 90%;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 1rem;
+    border: 2px solid #00897b;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-section {
-    padding: 2rem;
+#searchBar:focus {
+    border-color: #004d40;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-#crops .crop {
-    margin-bottom: 2rem;
+/* Crop List Styles */
+.crop-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
+.crop {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #b2dfdb;
+    border-radius: 8px;
+    width: 95%;
+    text-align: center;
+    background-color: #e0f2f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.crop:hover {
+    background-color: #b2dfdb;
+    transform: scale(1.05);
+}
+
+/* Disease Info Display Styles */
+#disease-info {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    width: 95%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInInfo 1.5s ease;
+}
+
+@keyframes fadeInInfo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Style for Crop Images */
 .crop-image {
     width: 100%;
-    height: auto;
+    max-height: 200px;
+    border-radius: 8px;
+    margin: 10px 0;
+    object-fit: cover;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Responsive Design for Different Screen Sizes */
+@media screen and (max-width: 600px) {
+    .animated-heading {
+        font-size: 1.5rem;
+    }
+
+    #searchBar {
+        width: 80%;
+    }
+
+    .crop {
+        width: 100%;
+    }
+
+    #disease-info {
+        width: 100%;
+    }
 }
