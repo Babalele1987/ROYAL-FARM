@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL - Crop Disease Identifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>ROYAL</h1>
+        <p>Helping Farmers Identify Crop Diseases in Kano State</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#crops">Crop Diseases</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <input type="text" id="searchBar" placeholder="Search for crops or diseases..." onkeyup="searchFunction()">
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Welcome to ROYAL</h2>
+        <p>We provide information on different crop diseases affecting farmers in Kano State, Northern Nigeria. Learn how to identify diseases and protect your crops effectively.</p>
+    </section>
+
+    <!-- Crop Disease Section -->
+    <section id="crops">
+        <h2>Crop Diseases in Kano State</h2>
+        <div id="crop-list">
+            <!-- Example of a crop and its diseases -->
+            <div class="crop">
+                <h3>Maize</h3>
+                <img src="images/maize.jpg" alt="Maize" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('maizeRust')">Maize Rust</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('maizeBlight')">Maize Blight</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Rice</h3>
+                <img src="images/rice.jpg" alt="Rice" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('riceBlast')">Rice Blast</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('bacterialLeafBlight')">Bacterial Leaf Blight</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Wheat</h3>
+                <img src="images/wheat.jpg" alt="Wheat" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('wheatRust')">Wheat Rust</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('powderyMildew')">Powdery Mildew</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Tomato</h3>
+                <img src="images/tomato.jpg" alt="Tomato" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('earlyBlight')">Early Blight</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('tomatoMosaicVirus')">Tomato Mosaic Virus</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Millet</h3>
+                <img src="images/millet.jpg" alt="Millet" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('downyMildew')">Downy Mildew</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('smut')">Smut</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Sorghum</h3>
+                <img src="images/sorghum.jpg" alt="Sorghum" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('anthracnose')">Anthracnose</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('grainMold')">Grain Mold</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Groundnut</h3>
+                <img src="images/groundnut.jpg" alt="Groundnut" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('leafSpot')">Leaf Spot</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('groundnutRosette')">Groundnut Rosette</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Onion</h3>
+                <img src="images/onion.jpg" alt="Onion" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('purpleBlotch')">Purple Blotch</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('downyMildewOnion')">Downy Mildew</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Okra</h3>
+                <img src="images/okra.jpg" alt="Okra" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('okraMosaicVirus')">Okra Mosaic Virus</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('powderyMildewOkra')">Powdery Mildew</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Beans</h3>
+                <img src="images/beans.jpg" alt="Beans" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('beanRust')">Bean Rust</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('angularLeafSpot')">Angular Leaf Spot</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Soybean</h3>
+                <img src="images/soybean.jpg" alt="Soybean" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('soybeanMosaicVirus')">Soybean Mosaic Virus</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('frogeyeLeafSpot')">Frogeye Leaf Spot</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Yam</h3>
+                <img src="images/yam.jpg" alt="Yam" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('yamAnthracnose')">Yam Anthracnose</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('yamMosaicVirus')">Yam Mosaic Virus</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Carrot</h3>
+                <img src="images/carrot.jpg" alt="Carrot" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('alternariaLeafBlight')">Alternaria Leaf Blight</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('carrotRustFly')">Carrot Rust Fly</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Peanut</h3>
+                <img src="images/peanut.jpg" alt="Peanut" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('earlyLeafSpot')">Early Leaf Spot</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('lateLeafSpot')">Late Leaf Spot</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Potato</h3>
+                <img src="images/potato.jpg" alt="Potato" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('potatoBlight')">Potato Blight</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('blackScurf')">Black Scurf</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Cucumber</h3>
+                <img src="images/cucumber.jpg" alt="Cucumber" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('downyMildewCucumber')">Downy Mildew</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('powderyMildewCucumber')">Powdery Mildew</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Pepper</h3>
+                <img src="images/pepper.jpg" alt="Pepper" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('pepperMosaicVirus')">Pepper Mosaic Virus</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('bacterialSpot')">Bacterial Spot</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Banana</h3>
+                <img src="images/banana.jpg" alt="Banana" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('bananaBunchyTopVirus')">Banana Bunchy Top Virus</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('blackSigatoka')">Black Sigatoka</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Cassava</h3>
+                <img src="images/cassava.jpg" alt="Cassava" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('cassavaMosaicVirus')">Cassava Mosaic Virus</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('cassavaBrownStreakVirus')">Cassava Brown Streak Virus</a></li>
+                </ul>
+            </div>
+            <div class="crop">
+                <h3>Sugarcane</h3>
+                <img src="images/sugarcane.jpg" alt="Sugarcane" class="crop-image">
+                <ul>
+                    <li><a href="#" onclick="showDiseaseDetails('redRot')">Red Rot</a></li>
+                    <li><a href="#" onclick="showDiseaseDetails('smutSugarcane')">Smut</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disease Details Section -->
+    <section id="disease-details">
+        <h2>Disease Details</h2>
+        <div id="disease-info">
+            <!-- Details about each disease will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further assistance, please contact us at <a href="mailto:info@royalagritech.com">info@royalagritech.com</a>.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 ROYAL - Helping Farmers in Kano State</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
